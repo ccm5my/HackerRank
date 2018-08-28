@@ -1,4 +1,4 @@
-package com.hackerrank.solutions.test;
+package com.hackerrank.solutions.testMaps;
 
 import org.junit.Before;
 import org.junit.Test;

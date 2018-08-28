@@ -7,8 +7,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.HashMap;
-
-
+import java.util.List;
 
 import com.hackerrank.solutions.map.JavaMapPractice;
 
@@ -33,14 +32,17 @@ public class JavaMapPracticeTest {
 	}
 	
 	@Test
-	public void test_java_map_class() {
+	@SuppressWarnings("unchecked")
+	public void test_java_map_class_uncle_sam() {
 		JavaMapPractice mapPractice = new JavaMapPractice();
-		HashMap<String, Integer> phoneBook = mapPractice.sortMap(stdinValues);
+	
+		List<String> returnValue = mapPractice.sortMap(stdinValues);
+		assertThat(returnValue.contains("uncle sam=99912222"), is(true));
+		assertThat(returnValue.contains("Not Found"), is(true) );
+		assertThat(returnValue.contains("harry=12299933"), is(true));
+		assertThat(returnValue.contains("uncle tom=11122222"), is(false));
 		
-		assertThat(phoneBook.containsKey("uncle sam"), is(true));
-		assertThat(phoneBook.containsKey("tom"), is(true));
-		assertThat(phoneBook.containsKey("harry"), is(true));
-
+		
 		
 		
 	}

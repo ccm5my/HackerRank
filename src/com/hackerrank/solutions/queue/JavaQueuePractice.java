@@ -26,27 +26,36 @@ public class JavaQueuePractice {
 	// combine the data from doing that into an answer
 	// return an int
 	// TO DO: Look up common methods with dequeue
+	List<Integer> results = new ArrayList<>();
+	public List<Integer> countUniqueNumbers(Set<List<Integer>> inputValues) {
 
-	public List<Integer> countUniqueNumbers(Set<ArrayList<Integer>> inputValues) {
 		int count = 0;
+		int finalCount = 0;
 		Map<Integer, Integer> countOccurences = new HashMap<>();
 		Deque<Integer> deque = new ArrayDeque<Integer>();
 		for (List<Integer> set : inputValues) {
 			deque.addAll(set);
 			for (int i : deque) {
-				
+
 				if (!countOccurences.containsValue(i)) {
-					countOccurences.put(i,1);
+					countOccurences.put(i, 1);
 				} else {
 					int value = countOccurences.get(i);
 					value++;
-					
+
+				}
+			}
+
+			for (int numberOfUniques : countOccurences.values()) {
+				if (numberOfUniques == 0) {
+					finalCount++;
 				}
 
 			}
-
+			results.add(finalCount);
 		}
-
-		return null;
+		
+		return results;
+		
 	}
 }

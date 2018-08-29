@@ -1,5 +1,8 @@
 package com.hackerrank.solutions.testQueue;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
@@ -11,6 +14,8 @@ import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.hackerrank.solutions.queue.JavaQueuePractice;
 
 public class JavaQueuePracticeTest {
 	Set<List<Integer>> setOfIntegerLists = new HashSet<List<Integer>>();
@@ -25,6 +30,9 @@ public class JavaQueuePracticeTest {
 
 	@Test
 	public void testQueueClass() {
-
+		JavaQueuePractice practice = new JavaQueuePractice();
+		List<Integer> finalResult = practice.countUniqueNumbers(setOfIntegerLists);
+		assertThat(finalResult.get(0), is(6));
+		assertThat(finalResult.get(1), is(3));
 	}
 }

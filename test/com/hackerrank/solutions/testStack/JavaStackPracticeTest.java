@@ -35,5 +35,6 @@ public class JavaStackPracticeTest {
 		assertThat(resultList.get(1), is(true));
 		assertThat(resultList.get(2), is(false));
 		assertThat(resultList.get(3), is(true));
+	
 	}
 }

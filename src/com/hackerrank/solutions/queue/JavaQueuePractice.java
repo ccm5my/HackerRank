@@ -21,7 +21,6 @@ public class JavaQueuePractice {
 		for (List<Integer> set : inputValues) {
 			deque.addAll(set);
 			for (int i : deque) {
-
 				if (!countOccurences.containsValue(i)) {
 					countOccurences.put(i, 1);
 				} else {
